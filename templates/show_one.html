@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+      {% if users %}
+         <table>
+            <thead>
+               <tr>
+                  <th>ID</th>
+                  <th>Nombre</th>
+               </tr>
+            </thead>
+            <tbody>
+                  <tr>
+                     <td>{{ users.id }}</td>
+                     <td>{{ users.nombre }}</td>
+                  </tr>
+            </tbody>
+         </table>
+         <p>{{ users.data }}</p>
+      {% else %}
+          <h1>No se encuentra el usuario</h1>
+      {% endif %} 
+   </body>
+</html>
