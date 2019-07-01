@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData, 
 import pymysql
 pymysql.install_as_MySQLdb()
 import json
-engine = create_engine('mysql://root:xmatrixy@127.0.0.1/contextO')
+engine = create_engine('mysql://root:password@127.0.0.1/contextO')
 conn = engine.connect()
 
 metadata = MetaData()
@@ -18,3 +18,7 @@ metadata.create_all(engine)
 with open('dataModel.json', 'r') as f:
     dataModel_dict = json.load(f)
     conn.execute(users.insert(), dataModel_dict)
+
+
+
+
