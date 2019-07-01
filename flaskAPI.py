@@ -1,4 +1,5 @@
 from flask import Flask, request, flash, url_for, redirect, render_template
+from flask_api import status
 from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:xmatrixy@127.0.0.1/contextO'
@@ -38,3 +39,14 @@ def show_user(iden):
 	print(userByID)
 	#lusers = users.query.all()  #returns a Query object. 
 	return render_template('show_one.html', users = userByID)
+
+@app.route('/json/<iden>')
+def show_json(iden):
+	userByID = users.query.filter_by(id=iden).first_or_404(description='No hay dato alguno con ID = {}'.format(iden))
+	yeisonStr = '{"codigo": 200, "mensaje":"Petición completada"}'
+	yeison = json.loads(yeisonStr)
+	if hasattr(userByID, 'data'):
+		yeison['payload']=userByID.data
+		print(userByID.data)
+		return render_template('show_json.html', data = json.dumps(yeison))
+	

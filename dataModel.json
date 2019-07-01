@@ -2,6 +2,7 @@
 	{
 		"data":{ 
 		   "fecha_ultima_consulta": "12/05/18",
+		   "nombre":"Mario Bello",
 		   "tipo_sangre": "O+",
 		   "alergias": [
 		        {
@@ -21,6 +22,7 @@
 	{
 		"data":{ 
 		   "fecha_ultima_consulta": "12/05/19",
+		   "nombre":"Pepe Nava",
 		   "tipo_sangre": "O+",
 		   "alergias": [
 		        {
