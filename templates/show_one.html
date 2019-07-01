@@ -17,9 +17,13 @@
                   </tr>
             </tbody>
          </table>
-         <p>{{ users.data }}</p>
+         
       {% else %}
           <h1>No se encuentra el usuario</h1>
       {% endif %} 
+      {
+      {% include 'show_json.html' %}
+      }
    </body>
 </html>
+   

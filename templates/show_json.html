@@ -1,3 +1,11 @@
 {% if data %}
-   <pre>{{ data }}</pre>
+	<pre>{{ data }}</pre>
+{% elif users.data %}
+	<table>
+		{% for dato in users.data %}
+		    <tr>
+		        <td><pre>{{ dato|tojson_pretty|safe }}:{{ users.data[dato]|tojson_pretty|safe }}</pre></td>
+		    </tr>
+		{% endfor %}
+	</table>
 {% endif %}

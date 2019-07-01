@@ -22,6 +22,12 @@ def __init__(self, nombre, data):
    self.nombre = name
    self.data = data
 
+def to_pretty_json(value):
+    return json.dumps(value, sort_keys=True,
+                      indent=4, separators=(',', ': '))
+
+app.jinja_env.filters['tojson_pretty'] = to_pretty_json
+
 @app.route('/')
 def show_all():
 	lusers = users.query.all()  #returns a Query object. 
